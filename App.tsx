@@ -9,25 +9,22 @@ import './gesture-handler';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React from 'react';
+import React, {useEffect} from 'react';
 import Home from './src/Screens/Home';
 import {Text, TouchableOpacity, View} from 'react-native';
 
-// import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen';
 
-// import type {PropsWithChildren} from 'react';
-
-// import {TouchableOpacity} from 'react-native-gesture-handler';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     SplashScreen.hide();
-  //   }, 2000); // 3초 후에 스플래시 스크린 숨기기
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000); // 3초 후에 스플래시 스크린 숨기기
 
-  //   return () => clearTimeout(timer); // 클린업
-  // }, []);
+    return () => clearTimeout(timer); // 클린업
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator
